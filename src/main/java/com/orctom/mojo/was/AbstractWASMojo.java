@@ -32,85 +32,85 @@ public abstract class AbstractWASMojo extends AbstractMojo {
   @Parameter(defaultValue = "${project.basedir}/was-maven-plugin.properties", property = "was.deploymentsPropertyFile")
   protected File deploymentsPropertyFile;
 
-  @Parameter(required = true)
+  @Parameter(required = true, property = "was.home")
   protected String wasHome;
 
   @Parameter(defaultValue = "${project.build.finalName}")
   protected String applicationName;
 
-  @Parameter(defaultValue = "localhost")
+  @Parameter(defaultValue = "localhost", property = "was.host")
   protected String host;
 
-  @Parameter
+  @Parameter(defaultValue = "8880", property = "was.port")
   protected String port;
 
-  @Parameter
+  @Parameter(defaultValue = "SOAP", property = "was.connectorType")
   protected String connectorType;
 
-  @Parameter(defaultValue = "true")
+  @Parameter(defaultValue = "true", property = "was.restartAfterDeploy")
   protected boolean restartAfterDeploy;
 
   /**
    * Required if target server is a cluster
    */
-  @Parameter
+  @Parameter(property = "was.cluster")
   protected String cluster;
 
-  @Parameter
+  @Parameter(property = "was.cell")
   protected String cell;
 
   /**
    * Required if target server is NOT cluster
    */
-  @Parameter
+  @Parameter(property = "was.node")
   protected String node;
 
-  @Parameter
+  @Parameter(property = "was.server")
   protected String server;
 
-  @Parameter
+  @Parameter(property = "was.webservers")
   protected String webservers;
 
-  @Parameter
+  @Parameter(property = "was.virtualHost")
   protected String virtualHost;
 
-  @Parameter
+  @Parameter(property = "was.user")
   protected String user;
 
-  @Parameter
+  @Parameter(property = "was.password")
   protected String password;
 
-  @Parameter
+  @Parameter(property = "was.contextRoot")
   protected String contextRoot;
 
-  @Parameter
+  @Parameter(property = "was.sharedLibs")
   protected String sharedLibs;
 
-  @Parameter
+  @Parameter(property = "was.parentLast")
   protected boolean parentLast;
 
-  @Parameter
+  @Parameter(property = "was.webModuleParentLast")
   protected boolean webModuleParentLast;
 
-  @Parameter(defaultValue = "${project.artifact.file}")
+  @Parameter(defaultValue = "${project.artifact.file}", property = "was.packageFile")
   protected File packageFile;
 
-  @Parameter(defaultValue = "false")
+  @Parameter(defaultValue = "false", property = "was.failOnError")
   protected boolean failOnError;
 
-  @Parameter
+  @Parameter(property = "was.script")
   protected String script;
 
-  @Parameter
+  @Parameter(property = "was.scriptArgs")
   protected String scriptArgs;
 
-  @Parameter
+  @Parameter(property = "was.javaoption")
   protected String javaoption;
 
-  @Parameter
+  @Parameter(property = "was.deployOptions")
   protected String deployOptions;
 
-  @Parameter
+  @Parameter(property = "was.verbose")
   protected boolean verbose;
 
   /**
